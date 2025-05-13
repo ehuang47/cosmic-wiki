@@ -6,7 +6,7 @@ import { FastifyInstance } from 'fastify';
 import fp from 'fastify-plugin';
 import { appRouter } from '../routes/router';
 import type { AppRouter } from '../routes/router';
-import { createContext } from '../context';
+import { createContext } from '../context/context';
 
 export default fp(async function (fastify: FastifyInstance) {
   fastify.register(fastifyTRPCPlugin, {

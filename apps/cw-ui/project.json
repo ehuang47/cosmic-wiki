@@ -1,0 +1,72 @@
+{
+  "name": "cw-ui",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/cw-ui/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "qwik-nx:build",
+      "options": {
+        "runSequence": ["cw-ui:build.client", "cw-ui:build.ssr"],
+        "outputPath": "dist/apps/cw-ui"
+      },
+      "configurations": {
+        "preview": {}
+      }
+    },
+    "build.client": {
+      "executor": "@nx/vite:build",
+      "options": {
+        "outputPath": "dist/apps/cw-ui",
+        "configFile": "apps/cw-ui/vite.config.ts"
+      }
+    },
+    "build.ssr": {
+      "executor": "@nx/vite:build",
+      "defaultConfiguration": "preview",
+      "options": {
+        "outputPath": "dist/apps/cw-ui"
+      },
+      "configurations": {
+        "preview": {
+          "ssr": "src/entry.preview.tsx",
+          "mode": "production"
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "options": {
+        "buildTarget": "cw-ui:build",
+        "port": 4173
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/apps/cw-ui"
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "options": {
+        "buildTarget": "cw-ui:build.client",
+        "mode": "ssr",
+        "port": 5173
+      }
+    },
+    "serve.debug": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node --inspect-brk ../../node_modules/vite/bin/vite.js --mode ssr --force",
+        "cwd": "apps/cw-ui"
+      }
+    },
+    "lint": {
+      "command": "eslint apps/cw-ui/**/*.{ts,tsx,js,jsx}"
+    }
+  }
+}
