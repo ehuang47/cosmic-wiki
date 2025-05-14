@@ -9,6 +9,7 @@ export default [
       '**/dist',
       '**/vite.config.*.timestamp*',
       '**/vitest.config.*.timestamp*',
+      'vite.config.ts',
     ],
   },
   {
@@ -21,8 +22,12 @@ export default [
           allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?js$'],
           depConstraints: [
             {
-              sourceTag: '*',
-              onlyDependOnLibsWithTags: ['*'],
+              sourceTag: 'scope:cw-api',
+              onlyDependOnLibsWithTags: ['scope:shared-api'],
+            },
+            {
+              sourceTag: 'scope:cw-ui',
+              onlyDependOnLibsWithTags: ['scope:shared-ui', 'scope:cw-api'],
             },
           ],
         },

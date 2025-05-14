@@ -28,7 +28,8 @@
           "buildDepsName": "build-deps",
           "watchDepsName": "watch-deps"
         }
-      }
+      },
+      "exclude": ["libs/shared-ui/*"]
     },
     {
       "plugin": "@nx/eslint/plugin",
@@ -42,6 +43,15 @@
         "targetName": "test"
       },
       "exclude": ["apps/cw-api-e2e/**/*"]
+    },
+    {
+      "plugin": "@nx/js/typescript",
+      "include": ["libs/shared-ui/*"],
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        }
+      }
     }
   ],
   "targetDefaults": {
@@ -56,6 +66,11 @@
     "@nx/vite:test": {
       "cache": true,
       "inputs": ["default", "^production"]
+    },
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   }
 }
