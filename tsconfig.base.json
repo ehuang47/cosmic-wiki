@@ -16,6 +16,12 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["development"]
+    "customConditions": ["development"],
+    "paths": {
+      "@apps/cw-api": ["apps/cw-api/src/index.ts"],
+      "@libs/shared-api": ["libs/shared-api/src/index.ts"],
+      "@libs/shared-ui": ["libs/shared-ui/src/index.ts"]
+    },
+    "baseUrl": "."
   }
 }
