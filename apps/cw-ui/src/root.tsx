@@ -4,7 +4,6 @@ import {
   RouterOutlet,
   ServiceWorkerRegister,
 } from '@builder.io/qwik-city';
-import { ItemList } from './components/item-list/item-list';
 import { RouterHead } from './components/router-head/router-head';
 import globalStyles from './global.scss?inline';
 
@@ -16,7 +15,6 @@ export default component$(() => {
    * Don't remove the `<head>` and `<body>` elements.
    */
   useStyles$(globalStyles);
-  console.log('root, render');
 
   return (
     <QwikCityProvider>
@@ -29,7 +27,6 @@ export default component$(() => {
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>
-      <ItemList />
     </QwikCityProvider>
   );
 });

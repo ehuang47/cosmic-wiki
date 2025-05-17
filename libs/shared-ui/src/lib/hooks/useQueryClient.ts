@@ -10,6 +10,7 @@ const makeQueryClient = () =>
 let browserQueryClient: QueryClient | undefined;
 
 export const useQueryClient = (event?: RequestEventLoader) => {
+  console.log({ isServer: isServer() });
   if (isServer()) {
     if (!event) {
       return makeQueryClient();

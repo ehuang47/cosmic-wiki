@@ -12,6 +12,7 @@
   "private": true,
   "dependencies": {
     "@fastify/autoload": "~6.0.3",
+    "@fastify/cors": "^11.0.1",
     "@fastify/sensible": "~6.0.2",
     "@tanstack/query-core": "^5.76.0",
     "@trpc/client": "^11.1.2",
