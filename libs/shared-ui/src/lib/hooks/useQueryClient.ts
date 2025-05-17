@@ -1,10 +1,52 @@
-import { useContext } from "@builder.io/qwik";
-import { QueryClientContext } from "../context/context";
+import { RequestEventLoader } from '@builder.io/qwik-city';
+import { QueryClient } from "@tanstack/query-core";
+import { isServer } from "../utils/utils";
 
-export const useQueryClient = () => {
-  const queryClient = useContext(QueryClientContext);
-  if (!queryClient) {
-    throw new Error('QueryClient not available. Make sure it is provided on the client.');
+const makeQueryClient = () =>
+  new QueryClient({
+    defaultOptions: { queries: { staleTime: 60 * 1000 } },
+  });
+
+let browserQueryClient: QueryClient | undefined;
+
+export const useQueryClient = (event?: RequestEventLoader) => {
+  if (isServer()) {
+    if (!event) {
+      return makeQueryClient();
+    }
+    // Used for SSR, sharing query cache, and dehydration.
+    const queryClientKey = 'QUERY_CLIENT_KEY';
+    let client = event.sharedMap.get(queryClientKey) as QueryClient | undefined;
+
+    if (!client) {
+      client = makeQueryClient();
+      event.sharedMap.set(queryClientKey, client);
+    }
+
+    return client;
+  } else {
+    if (!browserQueryClient) {
+      browserQueryClient = makeQueryClient();
+    }
+    return browserQueryClient;
   }
-  return queryClient;
 };
+
+/*
+- route loaders run in parallel.
+- we are sharing 1 server-side queryClient instance per SSR request
+- need to wait for all loaders to finish populating cache before dehydrating and serializing into html root
+- on browser, need to rehydrate just once before all loaders run, to prevent double fetching
+*/
+// let hydrated = false;
+// export const useRehydrateQuery = (dehydratedCache: DehydratedState) => {
+//   // ? does useTask re-run again on client
+//   useTask$(() => {
+//     if (!hydrated && !isServer()) {
+//       const queryClient = useQueryClient();
+//       hydrate(queryClient, dehydratedCache);
+//       hydrated = true;
+//     }
+//     console.log('useRehydrateQuery', { isServer: isServer() });
+//   });
+// };
