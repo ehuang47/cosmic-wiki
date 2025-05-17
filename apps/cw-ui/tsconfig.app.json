@@ -11,6 +11,6 @@
     "**/*.jsx",
     "**/*.ts",
     "**/*.tsx",
-    "../cw-api/src/index.ts"
+    "../../libs/shared-ui/src/index.ts"
   ]
 }

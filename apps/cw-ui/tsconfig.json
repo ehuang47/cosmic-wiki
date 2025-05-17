@@ -26,5 +26,9 @@
       "path": "./tsconfig.spec.json"
     }
   ],
-  "include": ["src"]
+  "include": [
+    "src",
+    "../../libs/shared-ui/src/lib/context",
+    "../../libs/shared-ui/src/lib/data-access"
+  ]
 }

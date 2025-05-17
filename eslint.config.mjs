@@ -1,9 +1,11 @@
 import nx from '@nx/eslint-plugin';
+import tanstack from '@tanstack/eslint-plugin-query';
 
 export default [
   ...nx.configs['flat/base'],
   ...nx.configs['flat/typescript'],
   ...nx.configs['flat/javascript'],
+  ...tanstack.configs['flat/recommended'],
   {
     ignores: [
       '**/dist',
@@ -28,6 +30,10 @@ export default [
             {
               sourceTag: 'scope:cw-ui',
               onlyDependOnLibsWithTags: ['scope:shared-ui', 'scope:cw-api'],
+            },
+            {
+              sourceTag: 'scope:shared-ui',
+              onlyDependOnLibsWithTags: ['scope:cw-api'],
             },
           ],
         },
