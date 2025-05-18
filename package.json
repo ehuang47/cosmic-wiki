@@ -20,6 +20,7 @@
     "axios": "^1.6.0",
     "fastify": "~5.2.1",
     "fastify-plugin": "~5.0.1",
+    "flowbite": "^3.1.2",
     "zod": "^3.24.4"
   },
   "devDependencies": {
@@ -43,6 +44,7 @@
     "@types/jest": "^29.5.12",
     "@types/node": "~18.16.9",
     "@vitest/ui": "^3.0.0",
+    "autoprefixer": "^10.4.21",
     "esbuild": "^0.19.2",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.0.0",
@@ -53,9 +55,11 @@
     "jsonc-eslint-parser": "^2.1.0",
     "node-fetch": "~3.3.0",
     "nx": "21.0.3",
+    "postcss": "^8.5.3",
     "prettier": "^2.6.2",
     "qwik-nx": "^3.1.1",
     "sass": "~1.56.1",
+    "tailwindcss": "^4.1.7",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "tsconfig-paths": "^4.2.0",

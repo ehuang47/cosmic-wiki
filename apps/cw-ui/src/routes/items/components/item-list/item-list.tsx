@@ -7,7 +7,7 @@ export const ItemList = component$(({ items }: ItemListProps) => {
   console.log('ItemList');
   return (
     <div>
-      <p>ItemList</p>
+      <p class="bg-blue-500">ItemList</p>
       <ol>
         {items.map((item) => (
           <li>{item}</li>

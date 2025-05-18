@@ -1,11 +1,13 @@
-import { component$, useStyles$ } from '@builder.io/qwik';
+import { component$, useStyles$, useVisibleTask$ } from '@builder.io/qwik';
 import {
   QwikCityProvider,
   RouterOutlet,
   ServiceWorkerRegister,
 } from '@builder.io/qwik-city';
+import { initFlowbite } from 'flowbite';
 import { RouterHead } from './components/router-head/router-head';
 import globalStyles from './global.scss?inline';
+import './tailwind.css';
 
 export default component$(() => {
   /**
@@ -15,7 +17,9 @@ export default component$(() => {
    * Don't remove the `<head>` and `<body>` elements.
    */
   useStyles$(globalStyles);
-
+  useVisibleTask$(() => {
+    initFlowbite();
+  });
   return (
     <QwikCityProvider>
       <head>
