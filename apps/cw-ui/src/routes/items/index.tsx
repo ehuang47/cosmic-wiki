@@ -1,11 +1,11 @@
 import { $, component$ } from '@builder.io/qwik';
 import { routeLoader$ } from '@builder.io/qwik-city';
-import { trpc, useQueryClient } from '@libs/shared-ui';
+import { getQueryClient, trpc } from '@libs/shared-ui';
 import { ItemList } from './components/item-list/item-list';
 
 export const useItems = routeLoader$(async (event) => {
   console.log('useitems routerloader');
-  const queryClient = useQueryClient(event);
+  const queryClient = getQueryClient(event);
 
   const items = await queryClient.fetchQuery({
     queryKey: ['items'],
@@ -18,7 +18,7 @@ export default component$(() => {
   const items = useItems();
   console.log('items page');
   const handleClick = $(async () => {
-    const queryClient = useQueryClient();
+    const queryClient = getQueryClient();
     const items = await queryClient.fetchQuery({
       queryKey: ['items'],
       queryFn: () => trpc.item.itemList.query(),

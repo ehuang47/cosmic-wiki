@@ -9,8 +9,8 @@ export const ItemList = component$(({ items }: ItemListProps) => {
     <div>
       <p class="bg-blue-500">ItemList</p>
       <ol>
-        {items.map((item) => (
-          <li>{item}</li>
+        {items.map((item, i) => (
+          <li key={i}>{item}</li>
         ))}
       </ol>
     </div>

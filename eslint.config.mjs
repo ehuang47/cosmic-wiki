@@ -1,13 +1,13 @@
 import nx from '@nx/eslint-plugin';
-import tanstack from '@tanstack/eslint-plugin-query';
 
 export default [
   ...nx.configs['flat/base'],
   ...nx.configs['flat/typescript'],
   ...nx.configs['flat/javascript'],
-  ...tanstack.configs['flat/recommended'],
   {
     ignores: [
+      'node_modules/*',
+      '**/tmp',
       '**/dist',
       '**/vite.config.*.timestamp*',
       '**/vitest.config.*.timestamp*',

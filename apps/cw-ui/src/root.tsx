@@ -17,6 +17,7 @@ export default component$(() => {
    * Don't remove the `<head>` and `<body>` elements.
    */
   useStyles$(globalStyles);
+  // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(() => {
     initFlowbite();
   });

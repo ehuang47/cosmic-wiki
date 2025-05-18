@@ -1,3 +1,5 @@
-import baseConfig from '../../eslint.config.mjs';
+import uiConfig from '../../libs/shared-ui/eslint.config.mjs';
 
-export default [...baseConfig];
+export default [
+  ...uiConfig
+];

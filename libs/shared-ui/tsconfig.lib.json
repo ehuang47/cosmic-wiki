@@ -12,6 +12,8 @@
     "**/*.ts",
     "**/*.tsx",
     "../../apps/cw-api/src/index.ts",
-    "src/lib/data-access/trpc.ts"
+    "src/lib/data-access/trpc.ts",
+    "../../eslint.config.mjs",
+    "./eslint.config.mjs"
   ]
 }

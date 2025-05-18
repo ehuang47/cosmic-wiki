@@ -1,8 +1,8 @@
 import {
   component$,
-  useVisibleTask$,
   useStore,
   useStylesScoped$,
+  useVisibleTask$,
 } from '@builder.io/qwik';
 import { DocumentHead, useLocation } from '@builder.io/qwik-city';
 import styles from './flower.scss?inline';
@@ -16,6 +16,7 @@ export default component$(() => {
     number: 20,
   });
 
+  // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(({ cleanup }) => {
     const timeout = setTimeout(() => (state.count = 1), 500);
     cleanup(() => clearTimeout(timeout));

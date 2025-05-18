@@ -52,6 +52,9 @@
           "targetName": "typecheck"
         }
       }
+    },
+    {
+      "plugin": "@tanstack/eslint-plugin-query"
     }
   ],
   "targetDefaults": {

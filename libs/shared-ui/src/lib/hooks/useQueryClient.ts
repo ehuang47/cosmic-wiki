@@ -9,7 +9,7 @@ const makeQueryClient = () =>
 
 let browserQueryClient: QueryClient | undefined;
 
-export const useQueryClient = (event?: RequestEventLoader) => {
+export const getQueryClient = (event?: RequestEventLoader) => {
   console.log({ isServer: isServer() });
   if (isServer()) {
     if (!event) {
@@ -44,7 +44,7 @@ export const useQueryClient = (event?: RequestEventLoader) => {
 //   // ? does useTask re-run again on client
 //   useTask$(() => {
 //     if (!hydrated && !isServer()) {
-//       const queryClient = useQueryClient();
+//       const queryClient = getQueryClient();
 //       hydrate(queryClient, dehydratedCache);
 //       hydrated = true;
 //     }
