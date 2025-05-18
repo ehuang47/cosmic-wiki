@@ -63,3 +63,10 @@ The production build will generate client and server modules by running both cli
 ```shell
 pnpm build # or `yarn build`
 ```
+
+```shell
+npm run dev
+npm run preview
+npm run build
+npm run qwik add
+```
