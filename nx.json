@@ -55,7 +55,17 @@
     },
     {
       "plugin": "@tanstack/eslint-plugin-query"
-    }
+    },
+    {
+			"plugin": "@nx/vite/plugin",
+			"options": {
+				"buildTargetName": "build",
+				"previewTargetName": "preview",
+				"testTargetName": "test",
+				"serveTargetName": "serve",
+				"serveStaticTargetName": "serve-static"
+			}
+		}
   ],
   "targetDefaults": {
     "@nx/esbuild:esbuild": {

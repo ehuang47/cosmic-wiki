@@ -1,0 +1,20 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"outDir": "../../dist/out-tsc",
+		"rootDir": "../../",
+		"declaration": true,
+		"types": ["node"]
+	},
+	"files": [],
+	"exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
+	"include": [
+		"**/*.js",
+		"**/*.jsx",
+		"**/*.ts",
+		"**/*.tsx",
+		"../../libs/shared-ui/src/index.ts",
+		"../../libs/shared-ui/eslint.config.mjs",
+		"./eslint.config.mjs"
+	]
+}

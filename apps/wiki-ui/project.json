@@ -1,0 +1,59 @@
+{
+  "name": "wiki-ui",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "root": "apps/wiki-ui",
+  "sourceRoot": "apps/wiki-ui/src",
+  "tags": ["scope:wiki-ui"],
+  "targets": {
+    "build": {
+        "executor": "@nx:run-commands",
+        "options": {
+          "commands": [
+            {
+              "command": "pnpm --filter wiki-ui run build"
+            }
+          ],
+          "cwd": "apps/wiki-ui",
+          "parallel": false
+        }
+      },
+      "serve": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            {
+              "command": "pnpm --filter wiki-ui run dev"
+            }
+          ],
+          "cwd": "apps/wiki-ui",
+          "parallel": false
+        }
+      },
+      "lint": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            {
+              "command": "pnpm --filter wiki-ui run lint"
+            }
+          ],
+          "cwd": "apps/wiki-ui",
+          "parallel": false
+        }
+      },
+      "test": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            {
+              "command": "pnpm --filter wiki-ui run test"
+            }
+          ],
+          "cwd": "apps/wiki-ui",
+          "parallel": false
+        }
+      }
+    }
+
+}

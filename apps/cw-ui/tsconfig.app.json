@@ -12,6 +12,7 @@
     "**/*.ts",
     "**/*.tsx",
     "../../libs/shared-ui/src/index.ts",
+    "../../libs/shared-ui/eslint.config.mjs",
     "./eslint.config.mjs"
   ]
 }

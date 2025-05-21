@@ -90,6 +90,10 @@ npx nx g @nx/node:lib --directory=libs/cw-api/data-access
 npx nx g qwik-nx:app --directory=apps/cw-ui
 npx nx g qwik-nx:lib --directory=libs/cw-ui/data-access
 
+npx nx g @nx/js:library libs/counter --unitTestRunner=vitest --bundler=vite --importPath=@acme/counter
+
+nx generate @nx/web:app apps/myapp
+
 npx create-nx-workspace@latest --preset=node-monorepo --framework=fastify --appName=temp
 mv temp/* .
 ```
