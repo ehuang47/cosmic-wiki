@@ -84,6 +84,7 @@ And join the Nx community:
 ## Commands
 
 ```sh
+pnpm dlx ...
 npx nx g @nx/node:app --directory=apps/cw-api
 npx nx g @nx/node:lib --directory=libs/cw-api/data-access
 

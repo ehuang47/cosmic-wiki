@@ -72,8 +72,5 @@ Thumbs.db
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
-# Paraglide
-src/lib/paraglide
-
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
