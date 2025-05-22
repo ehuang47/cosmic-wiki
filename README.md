@@ -97,4 +97,14 @@ nx generate @nx/web:app apps/myapp
 
 npx create-nx-workspace@latest --preset=node-monorepo --framework=fastify --appName=temp
 mv temp/* .
+
+
+nx reset # usually each time we reconfigure nx/project files
+NX_VERBOSE_LOGGING=true nx build your-app
+nx graph
+nx graph --affected
+
+nx show projects
+nx show project wiki-ui
+nx run
 ```

@@ -1,5 +1,11 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "projects": {
+    "wiki-ui": "apps/wiki-ui",
+    "cw-api": "apps/cw-api",
+    "cw-ui": "apps/cw-ui",
+    "cw-api-e2e": "apps/cw-api-e2e"
+  },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
@@ -56,16 +62,16 @@
     {
       "plugin": "@tanstack/eslint-plugin-query"
     },
-    {
-			"plugin": "@nx/vite/plugin",
-			"options": {
-				"buildTargetName": "build",
-				"previewTargetName": "preview",
-				"testTargetName": "test",
-				"serveTargetName": "serve",
-				"serveStaticTargetName": "serve-static"
-			}
-		}
+    // {
+		// 	"plugin": "@nx/vite/plugin",
+		// 	"options": {
+		// 		"buildTargetName": "build",
+		// 		"previewTargetName": "preview",
+		// 		"testTargetName": "test",
+		// 		"serveTargetName": "serve",
+		// 		"serveStaticTargetName": "serve-static"
+		// 	}
+		// }
   ],
   "targetDefaults": {
     "@nx/esbuild:esbuild": {

@@ -46,7 +46,7 @@
     "@nx/node": "21.0.3",
     "@nx/vite": "21.0.3",
     "@nx/web": "21.0.3",
-    "@nx/workspace": "21.0.3",
+    "@nx/workspace": "21.1.1",
     "@playwright/test": "^1.49.1",
     "@sveltejs/adapter-static": "^3.0.8",
     "@sveltejs/kit": "^2.21.1",

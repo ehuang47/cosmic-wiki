@@ -12,6 +12,5 @@
 		"incremental": true,
 		"types": ["node", "vite/client", "vitest"]
 	},
-	"files": [],
 	"include": ["src"]
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@temp-nx/cw-api-e2e",
+  "name": "cw-api-e2e",
   "version": "0.0.1",
   "private": true,
   "nx": {
