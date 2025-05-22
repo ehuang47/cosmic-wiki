@@ -4,6 +4,11 @@
   "license": "MIT",
   "packageManager": "pnpm@10.11.0",
   "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
   "scripts": {
     "server": "nx serve cw-api",
     "server-build": "nx run cw-api:build",
@@ -11,7 +16,6 @@
     "docker": "docker run -p 3000:3000 -t cw-api",
     "client": "nx serve cw-ui"
   },
-  "private": true,
   "dependencies": {
     "@fastify/autoload": "~6.0.3",
     "@fastify/cors": "^11.0.1",

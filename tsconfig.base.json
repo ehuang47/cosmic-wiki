@@ -1,27 +1,56 @@
 {
-  "compilerOptions": {
-    "composite": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
-    "importHelpers": true,
-    "isolatedModules": true,
-    "lib": ["es2022"],
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "noEmitOnError": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "es2022",
-    "customConditions": ["development"],
-    "paths": {
-      "@apps/cw-api": ["apps/cw-api/src/index.ts"],
-      "@libs/shared-api": ["libs/shared-api/src/index.ts"],
-      "@libs/shared-ui": ["libs/shared-ui/src/index.ts"]
-    },
-    "baseUrl": "."
-  }
+	"compilerOptions": {
+		// Includes DOM APIs (for browser support) and all latest JS features.
+		"lib": ["DOM", "ESNext"],
+
+		// Ideal module system for Vite
+		"module": "ESNext",
+
+		// Required for Vite/SvelteKit to resolve bare imports and conditionals like `import.meta.env`.
+		"moduleResolution": "bundler",
+		"target": "ES2022",
+
+		// Allows writing code that checks for `import.meta.condition === 'development'` etc.
+		"customConditions": ["development"],
+
+		// Sets the root for non-relative imports like aliases (used with `paths`).
+		"baseUrl": ".",
+		"paths": {
+			"@apps/cw-api": ["apps/cw-api/src/index.ts"],
+			"@libs/shared-api": ["libs/shared-api/src/index.ts"],
+			"@libs/shared-ui": ["libs/shared-ui/src/index.ts"]
+		},
+
+		// Allows importing helpers like `__extends` from `tslib` to reduce duplication.
+		"importHelpers": true,
+		// Ensures imports match file case on disk (especially important on Linux/Mac).
+		"forceConsistentCasingInFileNames": true,
+
+		// Ensures each file can be transpiled in isolation. Required by Vite and modern tools.
+		"isolatedModules": true,
+
+		// Disable TS composite projects (useful unless you're using project references).
+		"composite": false,
+
+		// Skip type-checking of node_modules — speeds up dev time.
+		"skipLibCheck": true,
+
+		// Enables interoperability with CommonJS — needed for many NPM packages.
+		"esModuleInterop": true,
+
+		// These are all declaration-related. Since you're not emitting, they're disabled.
+		"noEmit": true,
+		"noEmitOnError": true,
+		"declaration": false,
+		"emitDeclarationOnly": false,
+		"declarationMap": false,
+
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noImplicitAny": true,
+		"noUnusedLocals": true,
+		"strict": true
+	},
+	"exclude": ["node_modules", "dist", "build"]
 }

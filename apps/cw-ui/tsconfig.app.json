@@ -1,18 +1,17 @@
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
-    "rootDir": "../../"
-  },
-  "files": [],
-  "exclude": [],
-  "include": [
-    "**/*.js",
-    "**/*.jsx",
-    "**/*.ts",
-    "**/*.tsx",
-    "../../libs/shared-ui/src/index.ts",
-    "../../libs/shared-ui/eslint.config.mjs",
-    "./eslint.config.mjs"
-  ]
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"rootDir": "../../"
+	},
+	"files": [],
+	"exclude": [],
+	"include": [
+		"**/*.js",
+		"**/*.jsx",
+		"**/*.ts",
+		"**/*.tsx",
+		"../../libs/shared-ui/src/index.ts",
+		"../../libs/shared-ui/eslint.config.mjs",
+		"./eslint.config.mjs"
+	]
 }

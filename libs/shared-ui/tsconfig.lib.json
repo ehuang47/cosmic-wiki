@@ -1,19 +1,18 @@
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
-    "rootDir": "../../"
-  },
-  "files": [],
-  "exclude": [],
-  "include": [
-    "**/*.js",
-    "**/*.jsx",
-    "**/*.ts",
-    "**/*.tsx",
-    "../../apps/cw-api/src/index.ts",
-    "src/lib/data-access/trpc.ts",
-    "../../eslint.config.mjs",
-    "./eslint.config.mjs"
-  ]
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"rootDir": "../../"
+	},
+	"files": [],
+	"exclude": [],
+	"include": [
+		"**/*.js",
+		"**/*.jsx",
+		"**/*.ts",
+		"**/*.tsx",
+		"../../apps/cw-api/src/index.ts",
+		"src/lib/data-access/trpc.ts",
+		"../../eslint.config.mjs",
+		"./eslint.config.mjs"
+	]
 }
